@@ -1,0 +1,108 @@
+Task1:
+
+1.Write a blog on Difference between HTTP1.1 vs HTTP2
+
+Introduction:
+
+The Hypertext Transfer Protocol (HTTP) is the foundation of communication on the World Wide Web. It enables the retrieval and delivery of web content, making it an essential component of our online experiences. Over time, HTTP has evolved to meet the growing demands of modern web applications, resulting in the emergence of HTTP/1.1 and, more recently, HTTP/2. In this blog post, we will explore the key differences between HTTP/1.1 and HTTP/2 and how these advancements have revolutionized web communication.
+
+HTTP/1.1: The Old Reliable
+
+HTTP/1.1, released in 1999, has been the dominant protocol used for web communication for over two decades. It operates on a request-response model, where the client sends a request to the server, and the server responds with the requested content. While HTTP/1.1 served the web well, it had certain limitations that hindered performance and efficiency as web applications became more complex.
+
+1. Multiplexing:
+
+One of the major drawbacks of HTTP/1.1 is its lack of multiplexing. In this context, multiplexing refers to the ability to send multiple requests and receive multiple responses concurrently over a single connection. With HTTP/1.1, each request/response cycle required a separate connection, resulting in increased latency and slower page load times.
+
+2. Header Overhead:
+
+HTTP/1.1 includes significant redundancy in its request and response headers. With every request, the headers are sent along, even if they are identical to previous requests. This redundancy creates additional overhead and can impact performance, especially when dealing with numerous small requests.
+
+3. Compression:
+
+While HTTP/1.1 supports compression of HTTP payloads using technologies like gzip, it does not compress request or response headers. As a result, the overhead of transmitting headers, which can be substantial, is not minimized.
+
+HTTP/2: The Next Generation
+
+To address the limitations of HTTP/1.1, the HTTP/2 protocol was introduced in 2015. HTTP/2 retains compatibility with HTTP/1.1 but brings forth several key improvements to enhance performance and efficiency.
+
+1. Multiplexing and Concurrency:
+
+HTTP/2 introduces multiplexing, allowing multiple requests and responses to be interleaved over a single connection. This feature eliminates the need for multiple connections, reduces latency, and enables parallel processing of requests. As a result, web pages can load faster, particularly those containing numerous resources like images, scripts, and stylesheets.
+
+2. Binary Protocol:
+
+Unlike HTTP/1.1, which uses plain text for communication, HTTP/2 employs a binary protocol. By using a binary format, HTTP/2 reduces the size of the headers, resulting in lower overhead and improved efficiency. The binary framing layer also enables more efficient compression of headers, further reducing data transfer requirements.
+
+3. Server Push:
+
+HTTP/2 introduces server push, which allows servers to proactively send resources to the client before they are explicitly requested. For example, if a web page requires a particular CSS stylesheet, the server can push that resource to the client along with the initial response, eliminating the need for subsequent requests. This feature helps optimize the loading process and reduces round trips between the client and server.
+
+Conclusion:
+
+HTTP/2 represents a significant advancement in web communication compared to its predecessor, HTTP/1.1. With features like multiplexing, binary protocol, and server push, HTTP/2 greatly improves performance, reduces latency, and enhances the overall user experience. While the adoption of HTTP/2 has been steadily increasing, it is important to note that not all web servers and browsers support it by default. However, with time, HTTP/
+
+
+
+2.Objects and Their Internal Representation in JavaScript
+
+Introduction:
+
+JavaScript, as a versatile programming language, provides developers with powerful tools for building dynamic and interactive web applications. At the core of JavaScript lies the concept of objects, which play a fundamental role in structuring data and organizing functionality. In this blog post, we will delve into the internal representation of objects in JavaScript, exploring how they are defined, stored, and accessed.
+
+Understanding Objects in JavaScript:
+
+In JavaScript, objects are a collection of key-value pairs, where each key represents a property and each value represents the associated data or behavior. These properties can be accessed and manipulated using dot notation (e.g., `object.property`) or bracket notation (e.g., `object['property']`).
+
+1. Object Creation:
+
+There are multiple ways to create objects in JavaScript. The most common approach is through object literals, using curly braces to define key-value pairs:
+
+javascript
+
+const person = {
+  name: 'John Doe',
+  age: 30,
+  occupation: 'Developer'
+};
+
+Objects can also be created using the `Object` constructor or through object prototypes and classes in more complex scenarios.
+
+2. Object Properties:
+
+Properties in JavaScript objects can be of different data types, such as strings, numbers, booleans, functions, or even other objects. Properties can be added, modified, or deleted dynamically during the execution of a program.
+
+javascript
+
+person.name = 'Jane Smith'; // Modifying the 'name' property
+person.gender = 'Female'; // Adding a new 'gender' property
+delete person.occupation; // Deleting the 'occupation' property
+
+
+3. Object Internal Representation:
+
+Internally, JavaScript objects are implemented using a few different mechanisms. One such mechanism is the hash table (or hash map), which provides efficient key-value pair lookup. When a property is added to an object, JavaScript converts the property name into a hash value and stores the associated value in the appropriate location within the hash table.
+
+4. Object Prototypes and Inheritance:
+
+JavaScript objects also have a concept of prototypes, which allows for inheritance and sharing of properties and methods. Each object in JavaScript has an internal property called `[[Prototype]]`, which can be accessed using the `Object.getPrototypeOf()` method. This prototype chain allows objects to inherit properties and methods from their parent objects, creating a hierarchical structure.
+
+javascript
+
+const person = {
+  name: 'John Doe',
+  age: 30,
+  occupation: 'Developer'
+};
+
+const employee = Object.create(person);
+employee.salary = 50000;
+
+console.log(employee.name); // Accessing the 'name' property from the prototype chain
+
+
+Conclusion:
+
+Objects form the foundation of JavaScript programming, enabling developers to organize data and behavior in a structured manner. By understanding the internal representation of objects, we gain insights into how JavaScript stores and retrieves properties efficiently. Additionally, the concept of prototypes and inheritance enhances the flexibility and extensibility of JavaScript objects, allowing for code reuse and modularity.
+
+As you continue to explore JavaScript, delve deeper into the intricacies of objects, prototypes, and their internal representation. This knowledge will empower you to create robust and scalable applications while leveraging the full potential of the JavaScript language.
